@@ -60,7 +60,7 @@ class HomePage extends React.Component {
               <FormControl
                 placeholder="Digite a url para encurtar"
                 defaultValue=""
-                onChange={e => this.setState({ url: e.target.value })}
+                onChange={e => this.setState({ url: `http://${e.target.value}` })}
               />
               <Button variant="primary" type="submit">Encurtar</Button>
             </InputGroup>
@@ -74,7 +74,7 @@ class HomePage extends React.Component {
                     <FormControl
                       autoFocus={true}
                       defaultValue={vars.HOST_APP + code}
-                      ref={(input) => this.inputURL = `http://${input}`}
+                      ref={(input) => this.inputURL = input}
                     />
 
                     <Button variant="outline-secondary" onClick={() => this.copyToClipboard()}>Copiar</Button>
