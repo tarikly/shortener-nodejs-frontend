@@ -8,6 +8,8 @@ import ShortenerService from '../../services/shortenerService';
 import { parseISO, formatRelative } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
+import vars from '../../configs/vars';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { StatsContainer, StatsRow, StatsBox, StatsBoxTitle } from './styles';
 
@@ -66,7 +68,7 @@ class StatsPage extends React.Component {
           </StatsContainer>
         ) : (
           <StatsContainer className="text-center">
-            <p><b>{ process.env.URL + shortenedURL.code }</b></p>
+            <p><b>{ vars.HOST_APP + shortenedURL.code }</b></p>
             <p>Redireciona para:<br/>{shortenedURL.url}</p>
             <StatsRow>
               <StatsBox>
