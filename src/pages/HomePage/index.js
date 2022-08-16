@@ -18,21 +18,21 @@ class HomePage extends React.Component {
     }
   }
 
-  handleSubmit = async(event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
 
     const { url } = this.state;
 
     this.setState({ isLoading: true, errorMessage: '' });
 
-    if(!url) {
+    if (!url) {
       this.setState({ isLoading: false, errorMessage: 'Informe uma url para encurtar.' });
     } else {
       try {
         const service = new ShortenerService();
         const result = await service.generate({ url });
 
-        this.setState({isLoading: false, code: result.code });
+        this.setState({ isLoading: false, code: result.code });
       } catch (error) {
         this.setState({ isLoading: false, errorMessage: 'Ops, ocorreu um erro ao tentar encurtar a url.' });
       }
@@ -43,7 +43,7 @@ class HomePage extends React.Component {
     const element = this.inputURL;
     element.select();
     document.execCommand('copy');
-  } 
+  }
 
   render() {
     const { isLoading, errorMessage, code } = this.state;
@@ -54,12 +54,15 @@ class HomePage extends React.Component {
         <ContentContainer>
           <Form onSubmit={this.handleSubmit}>
             <InputGroup className="mb-3">
-              <FormControl 
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">http://</span>
+              </div>
+              <FormControl
                 placeholder="Digite a url para encurtar"
                 defaultValue=""
                 onChange={e => this.setState({ url: e.target.value })}
               />
-                <Button variant="primary" type="submit">Encurtar</Button>
+              <Button variant="primary" type="submit">Encurtar</Button>
             </InputGroup>
 
             {isLoading ? (
@@ -68,14 +71,14 @@ class HomePage extends React.Component {
               code && (
                 <>
                   <InputGroup className="mb-3">
-                    <FormControl 
+                    <FormControl
                       autoFocus={true}
-                      defaultValue={ vars.HOST_APP + code}
-                      ref={(input) => this.inputURL = input}
+                      defaultValue={vars.HOST_APP + code}
+                      ref={(input) => this.inputURL = `http://${input}`}
                     />
-                    
-                      <Button variant="outline-secondary" onClick={() => this.copyToClipboard()}>Copiar</Button>
-                    
+
+                    <Button variant="outline-secondary" onClick={() => this.copyToClipboard()}>Copiar</Button>
+
                   </InputGroup>
                   <p>Para acompanhar as estatísticas, acesse <a href={`${vars.HOST_APP}${code}/stats`} >{vars.HOST_APP + code}/stats</a></p>
                 </>
