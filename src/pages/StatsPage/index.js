@@ -8,7 +8,7 @@ import ShortenerService from '../../services/shortenerService';
 import { parseISO, formatRelative } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
-import vars from '../../configs/vars';
+import vars from '../../config/vars';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { StatsContainer, StatsRow, StatsBox, StatsBoxTitle } from './styles';

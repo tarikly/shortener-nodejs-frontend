@@ -3,6 +3,9 @@ import Header from '../../components/Header';
 import { Container, InputGroup, FormControl, Button, Alert, Spinner } from 'react-bootstrap';
 import { ContentContainer, Form, AdsBlock } from './styles';
 import ShortenerService from '../../services/shortenerService';
+
+import vars from '../../config/vars';
+
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
