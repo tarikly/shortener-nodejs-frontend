@@ -66,7 +66,7 @@ class StatsPage extends React.Component {
           </StatsContainer>
         ) : (
           <StatsContainer className="text-center">
-            <p><b>{"http://localhost:3000/" + shortenedURL.code}</b></p>
+            <p><b>{`${process.env.URL_API}` + shortenedURL.code}</b></p>
             <p>Redireciona para:<br/>{shortenedURL.url}</p>
             <StatsRow>
               <StatsBox>
