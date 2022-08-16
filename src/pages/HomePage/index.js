@@ -88,7 +88,8 @@ class HomePage extends React.Component {
           </Form>
         </ContentContainer>
         <ContentContainer>
-          <AdsBlock>Adsense</AdsBlock>
+          <AdsBlock><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7593294532145365"
+     crossorigin="anonymous"></script></AdsBlock>
         </ContentContainer>
       </Container>
     )
