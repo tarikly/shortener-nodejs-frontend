@@ -67,14 +67,14 @@ class HomePage extends React.Component {
                   <InputGroup className="mb-3">
                     <FormControl 
                       autoFocus={true}
-                      defaultValue={ {process.env.URL} + code}
+                      defaultValue={ process.env.URL + code}
                       ref={(input) => this.inputURL = input}
                     />
                     
                       <Button variant="outline-secondary" onClick={() => this.copyToClipboard()}>Copiar</Button>
                     
                   </InputGroup>
-                  <p>Para acompanhar as estatísticas, acesse { {process.env.URL} + code}/stats</p>
+                  <p>Para acompanhar as estatísticas, acesse { process.env.URL + code}/stats</p>
                 </>
               )
             )}
