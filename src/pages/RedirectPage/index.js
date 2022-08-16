@@ -45,7 +45,7 @@ class RedirectPage extends React.Component {
     }
 
     render() {
-        const { errorMessage, shortenedURL } = this.state;
+        const { errorMessage } = this.state;
 
         return (
             <Container>
