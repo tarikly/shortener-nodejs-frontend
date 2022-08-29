@@ -1,5 +1,5 @@
 import baseAPI from "./api";
-import vars from '../../config/vars';
+import vars from '../config/vars';
 
 class ShortenerService {
     constructor() {
