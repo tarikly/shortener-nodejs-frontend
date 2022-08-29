@@ -3,7 +3,7 @@ import vars from '../config/vars';
 
 class ShortenerService {
     constructor() {
-        this.api = baseAPI(vars.API_BASE);
+        this.api = baseAPI(`${vars.API_BASE}`);
     }
 
     async getLink(code) {
