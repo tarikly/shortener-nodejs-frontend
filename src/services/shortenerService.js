@@ -1,9 +1,8 @@
 import baseAPI from "./api";
-import vars from '../config/vars';
 
 class ShortenerService {
     constructor() {
-        this.api = baseAPI(`${vars.API_BASE}`);
+        this.api = baseAPI('https://api-tarikly-dev.apps.sandbox.x8i5.p1.openshiftapps.com/');
     }
 
     async getLink(code) {
