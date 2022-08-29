@@ -2,7 +2,7 @@ import baseAPI from "./api";
 
 class ShortenerService {
     constructor() {
-        this.api = baseAPI('http://url-shortener-api.tarikly.com/');
+        this.api = baseAPI(vars.API_BASE);
     }
 
     async getLink(code) {
